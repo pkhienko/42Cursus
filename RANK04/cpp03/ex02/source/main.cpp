@@ -1,0 +1,28 @@
+#include "FragTrap.hpp"
+
+int	main( void )
+{
+	ClapTrap	a("A");
+	ScavTrap	b("B");
+	FragTrap	c("C");
+
+	c.highFivesGuys();
+	a.attack(b.getName());
+	b.takeDamage(20);
+	b.attack(c.getName());
+	c.takeDamage(5);
+	a.takeDamage(2);
+	a.beRepaired(1);
+	b.attack(a.getName());
+	a.takeDamage(8);
+	c.attack(b.getName());
+	b.takeDamage(40);
+	a.beRepaired(15);
+	b.guardGate();
+	b.takeDamage(100);
+	b.takeDamage(10);
+	c.takeDamage(1000);
+	c.highFivesGuys();
+
+	return (0);
+}
