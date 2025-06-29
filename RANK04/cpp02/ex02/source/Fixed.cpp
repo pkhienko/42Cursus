@@ -132,7 +132,7 @@ int	Fixed::toInt( void ) const
 
 float	Fixed::toFloat( void ) const
 {
-	return ((float)_fixed_point / (1 << _fractional_bits));
+	return (static_cast<float>(_fixed_point) / (1 << _fractional_bits));
 }
 
 Fixed	&Fixed::min( Fixed &a, Fixed &b )

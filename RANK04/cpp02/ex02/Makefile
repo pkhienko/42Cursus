@@ -20,7 +20,7 @@ $(NAME):		Makefile $(OBJECTS)
 				@ echo "\033[1;33m---- Compiling Now we’re talking ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
 				@ echo "\033[32m     Now we’re talking Compiled!"
-				@ echo "\033[1;33m----------------------------------------"
+				@ echo "\033[1;33m-------------------------------------"
 
 
 %.o: %.cpp

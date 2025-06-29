@@ -20,7 +20,7 @@ $(NAME):		Makefile $(OBJECTS)
 				@ echo "\033[1;33m---- Compiling My First Class in Orthodox Canonical Form ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
 				@ echo "\033[32m     My First Class in Orthodox Canonical Form Compiled!"
-				@ echo "\033[1;33m----------------------------------------"
+				@ echo "\033[1;33m-------------------------------------------------------------"
 
 
 %.o: %.cpp

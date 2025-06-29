@@ -20,7 +20,7 @@ $(NAME):		Makefile $(OBJECTS)
 				@ echo "\033[1;33m---- Compiling Towards a more useful fixed-point number class ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
 				@ echo "\033[32m     Towards a more useful fixed-point number class Compiled!"
-				@ echo "\033[1;33m----------------------------------------"
+				@ echo "\033[1;33m------------------------------------------------------------------"
 
 
 %.o: %.cpp
