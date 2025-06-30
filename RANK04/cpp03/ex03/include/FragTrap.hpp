@@ -3,7 +3,7 @@
 
 # include "ScavTrap.hpp"
 
-class FragTrap : virtual public ClapTrap {
+class 	FragTrap : virtual public ClapTrap {
 	public :
 		static const unsigned int	DEFAULT_HIT_POINTS;
 		static const unsigned int	DEFAULT_ENERGY_POINTS;

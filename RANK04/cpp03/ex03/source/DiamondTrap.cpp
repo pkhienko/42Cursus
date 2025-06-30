@@ -20,6 +20,7 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), Sc
 
 DiamondTrap::DiamondTrap( const DiamondTrap &other ) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
+	this->_name = other._name;
 	std::cout << GREEN << " -> " RESET << "DiamondTrap " << YELLOW << _name << RESET << " has been copied.\n" << std::endl;
 }
 
