@@ -72,5 +72,8 @@ int main( void )
 		delete b;
 	}
 	std::cout << BLUE "------------------------------------------\n" RESET << std::endl;
+
+	// Animal *ad = new Animal();
+	// ad->makeSound();
 	return (0);
 }

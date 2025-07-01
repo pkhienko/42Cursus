@@ -1,4 +1,4 @@
-NAME			=	I_don’t_want_to_set_the_world_on_fire
+NAME			=	Abstract_class
 
 SOURCES			=	source/main.cpp \
 					source/Cat.cpp \
@@ -19,10 +19,10 @@ RM				= 	rm -f
 all:			$(NAME)
 
 $(NAME):		Makefile $(OBJECTS)
-				@ echo "\033[1;33m---- Compiling I don’t want to set theworld on fire ----"
+				@ echo "\033[1;33m---- Compiling Abstract class ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
-				@ echo "\033[32m     I don’t want to set theworld on fire Compiled!"
-				@ echo "\033[1;33m--------------------------------------------------------"
+				@ echo "\033[32m     Abstract class Compiled!"
+				@ echo "\033[1;33m----------------------------------"
 
 
 %.o: %.cpp

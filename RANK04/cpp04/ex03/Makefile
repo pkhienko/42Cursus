@@ -1,16 +1,19 @@
-NAME			=	I_don’t_want_to_set_the_world_on_fire
+NAME			=	Interface_\&_recap
 
 SOURCES			=	source/main.cpp \
-					source/Cat.cpp \
-					source/Dog.cpp \
-					source/Brain.cpp \
-					source/Animal.cpp
+					source/AMateria.cpp \
+					source/Ice.cpp \
+					source/Cure.cpp \
+					source/ICharacter.cpp \
+					source/Character.cpp \
+					source/IMateriaSource.cpp \
+					source/MateriaSource.cpp
 
 OBJECTS			= 	$(SOURCES:.cpp=.o)
 
 C++				= 	c++ 
 
-FLAGS			= 	-Wall -Werror -Wextra -pedantic -std=c++98
+FLAGS			= 	-Wall -Werror -Wextra -pedantic -std=c++98 -g3
 
 HEADER			=	-Iinclude
 
@@ -19,10 +22,10 @@ RM				= 	rm -f
 all:			$(NAME)
 
 $(NAME):		Makefile $(OBJECTS)
-				@ echo "\033[1;33m---- Compiling I don’t want to set theworld on fire ----"
+				@ echo "\033[1;33m---- Compiling Interface & recap ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
-				@ echo "\033[32m     I don’t want to set theworld on fire Compiled!"
-				@ echo "\033[1;33m--------------------------------------------------------"
+				@ echo "\033[32m     Interface & recap Compiled!"
+				@ echo "\033[1;33m-------------------------------------"
 
 
 %.o: %.cpp
