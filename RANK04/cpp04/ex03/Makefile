@@ -1,4 +1,4 @@
-NAME			=	Interface_\&_recap
+NAME			=	Interface_recap
 
 SOURCES			=	source/main.cpp \
 					source/AMateria.cpp \
@@ -13,7 +13,7 @@ OBJECTS			= 	$(SOURCES:.cpp=.o)
 
 C++				= 	c++ 
 
-FLAGS			= 	-Wall -Werror -Wextra -pedantic -std=c++98 -g3
+FLAGS			= 	-Wall -Werror -Wextra -pedantic -std=c++98
 
 HEADER			=	-Iinclude
 
