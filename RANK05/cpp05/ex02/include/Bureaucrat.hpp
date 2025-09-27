@@ -4,6 +4,7 @@
 # include <string>
 # include <iostream>
 # include <exception>
+# include "AForm.hpp"
 
 # define RESET "\033[0m"
 # define RED "\033[1;31m"
@@ -11,6 +12,8 @@
 # define GREEN "\033[1;32m"
 # define YELLOW "\033[1;33m"
 # define MAGENTA "\033[1;35m"
+
+class AForm;
 
 class Bureaucrat {
 	private :
@@ -36,6 +39,8 @@ class Bureaucrat {
 		// Methods
 		void	increment( void );
 		void	decrement( void );
+		void	signForm( AForm &form );
+		void	executeForm( AForm const &form ) const;
 
 		// Exceptions
 		class GradeTooHighException : public std::exception {

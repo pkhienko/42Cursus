@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat( const std::string name, const int grade ) : _name(name)
 		this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat &other ) : _name(other._name)
+Bureaucrat::Bureaucrat( const Bureaucrat &other ) : _name(other._name + "_copy")
 { 
 	*this = other;
 }
@@ -47,12 +47,12 @@ void	Bureaucrat::decrement( void )
 		_grade++;
 }
 
-void	Bureaucrat::signForm( Form &f ) {
+void	Bureaucrat::signForm( Form &form ) {
 	try {
-		f.beSigned(*this);
-		std::cout << GREEN << this->_name << RESET " signed " YELLOW << f.getName() << RESET << std::endl;
+		form.beSigned(*this);
+		std::cout << GREEN << this->_name << RESET " signed " YELLOW << form.getName() << RESET << std::endl;
 	} catch(const std::exception &e) {
-		std::cout << GREEN << this->_name << RESET " couldn't sign " YELLOW << f.getName() << RESET " because " RED << e.what() << std::endl;
+		std::cout << GREEN << this->_name << RESET " couldn't sign " YELLOW << form.getName() << RESET " because " RED << e.what() << std::endl;
 	}
 }
 

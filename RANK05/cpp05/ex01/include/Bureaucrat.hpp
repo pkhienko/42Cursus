@@ -36,12 +36,12 @@ class Bureaucrat {
 		const std::string	&getName( void ) const;
 		int					getGrade( void ) const;
 
-		// Member Function
+		// Methods
 		void	increment( void );
 		void	decrement( void );
-		void	signForm( Form &f );
+		void	signForm( Form &form );
 
-		// Exception
+		// Exceptions
 		class GradeTooHighException : public std::exception {
 			public :
 				virtual const char *what( void ) const throw();
