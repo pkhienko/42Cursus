@@ -13,6 +13,8 @@
 # define YELLOW "\033[1;33m"
 # define MAGENTA "\033[1;35m"
 
+class Form;
+
 class Bureaucrat {
 	private :
 		const std::string	_name;

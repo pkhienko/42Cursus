@@ -24,8 +24,6 @@ int main(void)
 		std::cerr << YELLOW << "Exception caught: " << RED << e.what() << RESET << std::endl;
 	}
 
-	// -----------------------------------------------------------------------------------------------------
-
 	std::cout << BLUE << std::endl << "Test 3: Increment boundary (start grade=1)"  << RESET << std::endl;
 	Bureaucrat top("TopRank", 1);
 	std::cout << top << std::endl;
@@ -52,8 +50,6 @@ int main(void)
 	}
 	std::cout << bottom << std::endl;
 
-	// -----------------------------------------------------------------------------------------------------
-
 	std::cout << BLUE << std::endl << "Test 5: Normal inc/dec (start grade=100)"  << RESET << std::endl;
 	Bureaucrat student("Student", 100);
 	std::cout << student << std::endl;
@@ -68,8 +64,6 @@ int main(void)
 	{
 		std::cerr << RED << "Unexpected exception: " << e.what() << RESET << std::endl;
 	}
-
-	// -----------------------------------------------------------------------------------------------------
 
 	std::cout << BLUE << std::endl << "Test 6: Copy constructor & assignment"  << RESET << std::endl;
 	Bureaucrat original("Original", 42);

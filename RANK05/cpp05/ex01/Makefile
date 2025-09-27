@@ -1,6 +1,7 @@
-NAME			=	 Form_up,_maggots!
+NAME			=	Form_up,_maggots!
 
 SOURCES			=	source/main.cpp \
+					source/Form.cpp \
 					source/Bureaucrat.cpp
 
 OBJECTS			= 	$(SOURCES:.cpp=.o)
