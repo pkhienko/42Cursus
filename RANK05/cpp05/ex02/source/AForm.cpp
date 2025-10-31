@@ -2,7 +2,8 @@
 
 AForm::AForm( void ) : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {}
 
-AForm::AForm( const std::string name, bool isSigned, const int signGrade, const int executeGrade ) : _name(name), _isSigned(isSigned), _signGrade(signGrade), _executeGrade(executeGrade) {
+AForm::AForm( const std::string name, bool isSigned, const int signGrade, const int executeGrade ) : _name(name), _isSigned(isSigned), _signGrade(signGrade), _executeGrade(executeGrade)
+{
 	if (this->_signGrade > 150 || this->_executeGrade > 150)
 		throw AForm::GradeTooLowException();
 	else if (this->_signGrade < 1 || this->_executeGrade < 1)
@@ -32,7 +33,8 @@ int	AForm::getSignGrade( void ) const { return (this->_signGrade); }
 
 int	AForm::getExecuteGrade( void ) const { return (this->_executeGrade); }
 
-void	AForm::beSigned( Bureaucrat const &b ) {
+void	AForm::beSigned( Bureaucrat const &b )
+{
 	if (b.getGrade() > this->_signGrade)
 		throw AForm::GradeTooLowException();
 	_isSigned = true;
@@ -48,7 +50,13 @@ const char	*AForm::GradeTooLowException::what( void ) const throw()
 	return ("Grade is too Low (must be <= 150)");
 }
 
-std::ostream &operator<<(std::ostream &os, const AForm &other) {
+const char	*AForm::FormNotSignedException::what( void ) const throw()
+{
+	return ("Form is not signed");
+}
+
+std::ostream &operator<<(std::ostream &os, const AForm &other)
+{
 	return (os << GREEN "AForm:\t" <<  other.getName() << RESET
 			MAGENTA "\n\tIs Signed" BLUE " -> " << (other.getIsSigned() == true ? GREEN "True" RESET : RED "False" RESET) <<
 			MAGENTA "\n\tSign Grade" BLUE " -> " YELLOW << other.getSignGrade() << RESET <<

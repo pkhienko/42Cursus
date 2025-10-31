@@ -47,7 +47,8 @@ void	Bureaucrat::decrement( void )
 		_grade++;
 }
 
-void	Bureaucrat::signForm( Form &form ) {
+void	Bureaucrat::signForm( Form &form )
+{
 	try {
 		form.beSigned(*this);
 		std::cout << GREEN << this->_name << RESET " signed " YELLOW << form.getName() << RESET << std::endl;
@@ -66,6 +67,7 @@ const char	*Bureaucrat::GradeTooLowException::what( void ) const throw()
 	return ("Grade is too Low (must be <= 150)");
 }
 
-std::ostream &operator<<( std::ostream &os, const Bureaucrat &other ) {
+std::ostream &operator<<( std::ostream &os, const Bureaucrat &other )
+{
 	return (os << GREEN << other.getName() << RESET ", bureaucrat grade " YELLOW << other.getGrade() << RESET);
 }

@@ -20,7 +20,7 @@ class ShrubberyCreationForm : public AForm {
 		~ShrubberyCreationForm( void );
 
 		// Getter
-		std::string	&getTarget( void ) const;
+		std::string	getTarget( void ) const;
 
 		// Methods
 		void	execute( Bureaucrat const &executor ) const;

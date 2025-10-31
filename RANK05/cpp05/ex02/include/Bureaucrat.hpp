@@ -1,7 +1,10 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+# include <ctime>
 # include <string>
+# include <cstdlib>
+# include <fstream>
 # include <iostream>
 # include <exception>
 # include "AForm.hpp"

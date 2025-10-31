@@ -2,7 +2,10 @@ NAME			=	No,_you_need_form_28B,_not_28C...
 
 SOURCES			=	source/main.cpp \
 					source/AForm.cpp \
-					source/Bureaucrat.cpp
+					source/Bureaucrat.cpp \
+					source/RobotomyRequestForm.cpp \
+					source/ShrubberyCreationForm.cpp \
+					source/PresidentialPardonForm.cpp
 
 OBJECTS			= 	$(SOURCES:.cpp=.o)
 

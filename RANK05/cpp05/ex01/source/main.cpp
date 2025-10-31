@@ -1,6 +1,7 @@
 #include "Form.hpp"
 
-int main(void) {
+int main(void)
+{
 	std::cout << MAGENTA << "========= Test Form =========" << RESET << std::endl;
 
 	std::cout << BLUE << "\nTest 1: Invalid Form (sign=0, exec=10)" << RESET << std::endl;

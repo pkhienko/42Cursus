@@ -2,7 +2,8 @@
 
 Form::Form( void ) : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {}
 
-Form::Form( const std::string name, bool isSigned, const int signGrade, const int executeGrade ) : _name(name), _isSigned(isSigned), _signGrade(signGrade), _executeGrade(executeGrade) {
+Form::Form( const std::string name, bool isSigned, const int signGrade, const int executeGrade ) : _name(name), _isSigned(isSigned), _signGrade(signGrade), _executeGrade(executeGrade)
+{
 	if (this->_signGrade > 150 || this->_executeGrade > 150)
 		throw Form::GradeTooLowException();
 	else if (this->_signGrade < 1 || this->_executeGrade < 1)
@@ -32,7 +33,8 @@ int	Form::getSignGrade( void ) const { return (this->_signGrade); }
 
 int	Form::getExecuteGrade( void ) const { return (this->_executeGrade); }
 
-void	Form::beSigned( const Bureaucrat &b ) {
+void	Form::beSigned( const Bureaucrat &b )
+{
 	if (b.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 	_isSigned = true;
@@ -48,7 +50,8 @@ const char	*Form::GradeTooLowException::what( void ) const throw()
 	return ("Grade is too Low (must be <= 150)");
 }
 
-std::ostream &operator<<(std::ostream &os, const Form &other) {
+std::ostream &operator<<(std::ostream &os, const Form &other)
+{
 	return (os << GREEN "Form:\t" <<  other.getName() << RESET
 			MAGENTA "\n\tIs Signed" BLUE " -> " << (other.getIsSigned() == true ? GREEN "True" RESET : RED "False" RESET) <<
 			MAGENTA "\n\tSign Grade" BLUE " -> " YELLOW << other.getSignGrade() << RESET <<
