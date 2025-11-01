@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-int main(void)
+int main( void )
 {
 	std::cout << MAGENTA << "========= Test Form =========" << RESET << std::endl;
 

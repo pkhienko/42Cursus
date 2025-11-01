@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form( void ) : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {}
+Form::Form( void ) : _name("Form"), _isSigned(false), _signGrade(150), _executeGrade(150) {}
 
 Form::Form( const std::string name, bool isSigned, const int signGrade, const int executeGrade ) : _name(name), _isSigned(isSigned), _signGrade(signGrade), _executeGrade(executeGrade)
 {
@@ -42,18 +42,28 @@ void	Form::beSigned( const Bureaucrat &b )
 
 const char	*Form::GradeTooHighException::what( void ) const throw()
 {
-	return ("Grade is too High (must be >= 1)");
+	return ("Grade is too High");
 }
 
 const char	*Form::GradeTooLowException::what( void ) const throw()
 {
-	return ("Grade is too Low (must be <= 150)");
+	return ("Grade is too Low");
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &other)
 {
-	return (os << GREEN "Form:\t" <<  other.getName() << RESET
+	return (os << GREEN "Form:\t" RESET << other.getName() <<
 			MAGENTA "\n\tIs Signed" BLUE " -> " << (other.getIsSigned() == true ? GREEN "True" RESET : RED "False" RESET) <<
 			MAGENTA "\n\tSign Grade" BLUE " -> " YELLOW << other.getSignGrade() << RESET <<
 			MAGENTA "\n\tExecute Grade" BLUE " -> " YELLOW << other.getExecuteGrade() << RESET);
+}
+
+std::ostream &operator<<(std::ostream &os, const Form *other)
+{
+	if (!other)
+		return (os << "(Null Form)");
+	return (os << GREEN "Form:\t" RESET << other->getName() <<
+			MAGENTA "\n\tIs Signed" BLUE " -> " << (other->getIsSigned() == true ? GREEN "True" RESET : RED "False" RESET) <<
+			MAGENTA "\n\tSign Grade" BLUE " -> " YELLOW << other->getSignGrade() << RESET <<
+			MAGENTA "\n\tExecute Grade" BLUE " -> " YELLOW << other->getExecuteGrade() << RESET);
 }

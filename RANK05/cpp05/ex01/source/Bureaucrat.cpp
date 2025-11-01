@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( void ) : _name("Default"), _grade(150) {}
+Bureaucrat::Bureaucrat( void ) : _name("Bureaucrat"), _grade(150) {}
 
 Bureaucrat::Bureaucrat( const std::string name, const int grade ) : _name(name)
 {
@@ -53,7 +53,7 @@ void	Bureaucrat::signForm( Form &form )
 		form.beSigned(*this);
 		std::cout << GREEN << this->_name << RESET " signed " YELLOW << form.getName() << RESET << std::endl;
 	} catch(const std::exception &e) {
-		std::cout << GREEN << this->_name << RESET " couldn't sign " YELLOW << form.getName() << RESET " because " RED << e.what() << std::endl;
+		std::cout << GREEN << this->_name << RESET " couldn't sign " YELLOW << form.getName() << RESET " because " RED << e.what() << RESET << std::endl;
 	}
 }
 
@@ -71,3 +71,11 @@ std::ostream &operator<<( std::ostream &os, const Bureaucrat &other )
 {
 	return (os << GREEN << other.getName() << RESET ", bureaucrat grade " YELLOW << other.getGrade() << RESET);
 }
+
+std::ostream &operator<<( std::ostream& os, const Bureaucrat *other )
+{
+	if (!other)
+		return (os << "(Null Bureaucrat)");
+	return (os << GREEN << other->getName() << RESET ", bureaucrat grade " YELLOW << other->getGrade() << RESET);
+}
+

@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( void ) : _name("Default"), _grade(150) {}
+Bureaucrat::Bureaucrat( void ) : _name("BureaBureaucratucrat"), _grade(150) {}
 
 Bureaucrat::Bureaucrat( const std::string name, const int grade ) : _name(name)
 {
@@ -60,4 +60,11 @@ const char	*Bureaucrat::GradeTooLowException::what( void ) const throw()
 std::ostream &operator<<( std::ostream &os, const Bureaucrat &other )
 {
 	return (os << GREEN << other.getName() << RESET ", bureaucrat grade " YELLOW << other.getGrade() << RESET);
+}
+
+std::ostream &operator<<( std::ostream& os, const Bureaucrat *other )
+{
+	if (!other)
+		return (os << "(Null Bureaucrat)");
+	return (os << GREEN << other->getName() << RESET ", bureaucrat grade " YELLOW << other->getGrade() << RESET);
 }

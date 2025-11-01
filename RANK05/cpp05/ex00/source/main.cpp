@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-int main(void)
+int main( void )
 {
 	std::cout << MAGENTA << std::endl << "========= Test Bureaucrat =========" << RESET << std::endl;
 
