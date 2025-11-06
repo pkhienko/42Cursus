@@ -53,7 +53,7 @@ void	Bureaucrat::signForm( AForm &form )
 		form.beSigned(*this);
 		std::cout << GREEN << this->_name << RESET " signed " YELLOW << form.getName() << RESET << std::endl;
 	} catch(const std::exception &e) {
-		std::cout << GREEN << this->_name << RESET " couldn't sign " YELLOW << form.getName() << RESET " because " RED << e.what() << RESET << std::endl;
+		std::cerr << GREEN << this->_name << RESET " couldn't sign " YELLOW << form.getName() << RESET " because " RED << e.what() << RESET << std::endl;
 	}
 }
 
@@ -63,7 +63,7 @@ void	Bureaucrat::executeForm( AForm const &form) const
 		form.execute(*this);
 		std::cout << GREEN << this->_name << RESET " executed " YELLOW << form.getName() << RESET << std::endl;
 	} catch(const std::exception &e) {
-		std::cout << GREEN << this->_name << RESET " couldn't execute " YELLOW << form.getName() << RESET " because " RED << e.what() << RESET << std::endl;
+		std::cerr << GREEN << this->_name << RESET " couldn't execute " YELLOW << form.getName() << RESET " because " RED << e.what() << RESET << std::endl;
 	}
 }
 
