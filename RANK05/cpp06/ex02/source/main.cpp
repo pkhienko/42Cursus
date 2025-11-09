@@ -77,6 +77,6 @@ int	main( void )
 		delete ptr;
 	}
 
-	std::cout << MAGENTA << "\n========= End of Tests =========" << RESET << std::endl;
+	std::cout << MAGENTA << std::endl << "========= End of Tests =========" << RESET << std::endl;
 	return (0);
 }
