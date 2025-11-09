@@ -1,6 +1,7 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+# include <ctime>
 # include <string>
 # include <cstdlib>
 # include <iostream>

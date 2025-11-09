@@ -29,12 +29,10 @@ Array<T>	&Array<T>::operator=( const Array<T> &other )
 }
 
 template <typename T>
-// T	&Array<T>::operator[]( unsigned int n ) { return (n < _size ? _arr[n] : throw Array<T>::OutOfBoundsException()); }
-T	&Array<T>::operator[]( unsigned int n ) { return (n < _size ? _arr[n] : throw std::exception()); }
+T	&Array<T>::operator[]( unsigned int n ) { return (n < _size ? _arr[n] : throw Array<T>::OutOfBoundsException()); }
 
 template <typename T>
-// const T	&Array<T>::operator[]( unsigned int n ) const { return (n < _size ? _arr[n] : throw Array<T>::OutOfBoundsException()); }
-const T	&Array<T>::operator[]( unsigned int n ) const { return (n < _size ? _arr[n] : throw std::exception()); }
+const T	&Array<T>::operator[]( unsigned int n ) const { return (n < _size ? _arr[n] : throw Array<T>::OutOfBoundsException()); }
 
 template <typename T>
 Array<T>::~Array( void ) { delete [] _arr; }
