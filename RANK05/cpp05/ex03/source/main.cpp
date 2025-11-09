@@ -32,6 +32,6 @@ int main ( void )
     delete form;
     delete bob;
 
-    std::cout << MAGENTA << "\n========= End of Tests =========" << RESET << std::endl;
+    std::cout << MAGENTA << std::endl << "========= End of Tests =========" << RESET << std::endl;
     return (0);
 }

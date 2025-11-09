@@ -4,10 +4,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( void ) : AForm("ShrubberyCreationF
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : AForm("ShrubberyCreationForm", false, 145, 137), _target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &other ) : AForm(other.getName() + "_copy", false, 145, 137), _target(other._target)
-{ 
-	*this = other;
-}
+ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &other ) : AForm(other.getName() + "_copy", false, 145, 137), _target(other._target) {}
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=( const ShrubberyCreationForm &other )
 {

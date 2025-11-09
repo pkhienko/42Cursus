@@ -10,10 +10,7 @@ AForm::AForm( const std::string name, bool isSigned, const int signGrade, const 
 		throw AForm::GradeTooHighException();
 }
 
-AForm::AForm( const AForm &other ) : _name(other._name + "_copy"), _signGrade(other._signGrade), _executeGrade(other._executeGrade)
-{ 
-	*this = other;
-}
+AForm::AForm( const AForm &other ) : _name(other._name + "_copy"), _signGrade(other._signGrade), _executeGrade(other._executeGrade), _isSigned(other._isSigned) {}
 
 AForm	&AForm::operator=( const AForm &other )
 {

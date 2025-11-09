@@ -48,6 +48,8 @@ int main( void )
 	Form fassign("Dummy", false, 150, 150);
 	fassign = nonSecret;
 	std::cout << fassign << std::endl;
+	
 
+    std::cout << MAGENTA << std::endl << "========= End of Tests =========" << RESET << std::endl;
 	return (0);
 }

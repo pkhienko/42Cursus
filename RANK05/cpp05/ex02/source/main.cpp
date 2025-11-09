@@ -166,6 +166,7 @@ int main ( void )
     } catch (const std::exception &e) {
         std::cerr << RED << "Unexpected exception: " << e.what() << RESET << std::endl;
     }
-    std::cout << MAGENTA << "\n========= End of Tests =========" << RESET << std::endl;
+
+    std::cout << MAGENTA << std::endl << "========= End of Tests =========" << RESET << std::endl;
     return (0);
 }
