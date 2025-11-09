@@ -1,4 +1,4 @@
-NAME			=	Array
+NAME			=	Iter
 
 SOURCES			=	source/main.cpp
 
@@ -15,10 +15,10 @@ RM				= 	rm -f
 all:			$(NAME)
 
 $(NAME):		Makefile $(OBJECTS)
-				@ echo "\033[1;33m---- Compiling Array ----"
+				@ echo "\033[1;33m---- Compiling Iter ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
-				@ echo "\033[32m     Array Compiled!"
-				@ echo "\033[1;33m-------------------------\033[0m"
+				@ echo "\033[32m     Iter Compiled!"
+				@ echo "\033[1;33m------------------------\033[0m"
 
 %.o: %.cpp
 				@ $(C++) $(HEADER) $(FLAGS) -c $< -o $@

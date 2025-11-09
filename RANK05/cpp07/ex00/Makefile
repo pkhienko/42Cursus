@@ -1,4 +1,4 @@
-NAME			=	Array
+NAME			=	Start_with_a_few_functions
 
 SOURCES			=	source/main.cpp
 
@@ -15,10 +15,10 @@ RM				= 	rm -f
 all:			$(NAME)
 
 $(NAME):		Makefile $(OBJECTS)
-				@ echo "\033[1;33m---- Compiling Array ----"
+				@ echo "\033[1;33m---- Compiling Start with a few functions ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
-				@ echo "\033[32m     Array Compiled!"
-				@ echo "\033[1;33m-------------------------\033[0m"
+				@ echo "\033[32m     Start with a few functions Compiled!"
+				@ echo "\033[1;33m----------------------------------------------\033[0m"
 
 %.o: %.cpp
 				@ $(C++) $(HEADER) $(FLAGS) -c $< -o $@
