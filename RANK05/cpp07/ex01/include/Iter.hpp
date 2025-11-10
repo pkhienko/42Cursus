@@ -12,7 +12,7 @@
 # define MAGENTA "\033[1;35m"
 
 template <typename T_Array, typename T_Function>
-void	iter(T_Array *arr, const size_t length, T_Function func)
+void	iter( T_Array *arr, const size_t length, T_Function func )
 {
 	for (size_t i = 0; i < length; i++)
 		func(arr[i]);
