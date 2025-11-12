@@ -4,7 +4,6 @@
 # include <list>
 # include <stack>
 # include <deque>
-# include <vector>
 # include <iostream>
 
 # define RESET "\033[0m"
@@ -14,7 +13,7 @@
 # define YELLOW "\033[1;33m"
 # define MAGENTA "\033[1;35m"
 
-template <typename T, typename Container = std::deque<T>>
+template < typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
 	public:
@@ -29,10 +28,10 @@ class MutantStack : public std::stack<T, Container>
 		~MutantStack( void );
 
 		// Typedef Iterators
-		typedef	typename Container::iterator iterator:
-		typedef	typename Container::const_iterator const_iterator:
-		typedef	typename Container::reverse_iterator reverse_iterator:
-		typedef	typename Container::const_reverse_iterator const_reverse_iterator:
+		typedef	typename Container::iterator iterator;
+		typedef	typename Container::const_iterator const_iterator;
+		typedef	typename Container::reverse_iterator reverse_iterator;
+		typedef	typename Container::const_reverse_iterator const_reverse_iterator;
 
 		 // Normal Iterators
 		iterator	begin( void );
@@ -50,5 +49,7 @@ class MutantStack : public std::stack<T, Container>
 		const_reverse_iterator	rbegin( void ) const;
 		const_reverse_iterator	rend( void ) const;
 };
+
+# include "../source/MutantStack.tpp"
 
 #endif
