@@ -1,4 +1,4 @@
-NAME			=	Bitcoin_Exchange
+NAME			=	btc
 
 SOURCES			=	source/main.cpp \
 					source/BitcoinExchange.cpp
