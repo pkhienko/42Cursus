@@ -1,4 +1,4 @@
-NAME			=	btc
+NAME			=	Reverse_Polish_Notation
 
 SOURCES			=	source/main.cpp \
 					source/RPN.cpp
@@ -16,10 +16,10 @@ RM				= 	rm -f
 all:			$(NAME)
 
 $(NAME):		Makefile $(OBJECTS)
-				@ echo "\033[1;33m---- Compiling Bitcoin Exchange ----"
+				@ echo "\033[1;33m---- Compiling Reverse Polish Notation ----"
 				@ $(C++) $(HEADER) $(FLAGS) $(OBJECTS) -o $(NAME)
-				@ echo "\033[32m     Bitcoin Exchange Compiled!"
-				@ echo "\033[1;33m------------------------------------\033[0m"
+				@ echo "\033[32m     Reverse Polish Notation Compiled!"
+				@ echo "\033[1;33m-------------------------------------------\033[0m"
 
 %.o: %.cpp
 				@ $(C++) $(HEADER) $(FLAGS) -c $< -o $@
