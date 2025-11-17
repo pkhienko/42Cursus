@@ -61,7 +61,7 @@ class BitcoinExchange {
 		// Exception
 		class CouldNotOpenFileException : public BtcException {
 			public :
-				CouldNotOpenFileException( const std::string &filename );
+				explicit CouldNotOpenFileException( const std::string &filename );
 		};
 
 		class BadInputColumnException : public BtcException {
@@ -71,12 +71,12 @@ class BitcoinExchange {
 
 		class BadInputDateException : public BtcException {
 			public :
-				BadInputDateException( const std::string &err );
+				explicit BadInputDateException( const std::string &err );
 		};
 
 		class BadInputException : public BtcException {
 			public :
-				BadInputException( const std::string &err );
+				explicit BadInputException( const std::string &err );
 		};
 };
 
