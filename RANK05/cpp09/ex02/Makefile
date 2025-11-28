@@ -1,7 +1,7 @@
 NAME			=	PmergeMe
 
 SOURCES			=	source/main.cpp \
-					source/RPN.cpp
+					source/PmergeMe.cpp
 
 OBJECTS			= 	$(SOURCES:.cpp=.o)
 
