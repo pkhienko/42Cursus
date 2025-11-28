@@ -155,7 +155,7 @@ void	BitcoinExchange::run( const std::string &filename )
 	file.close();
 }
 
-BitcoinExchange::BtcException::BtcException( const std::string &msg) : _msg(msg) {}
+BitcoinExchange::BtcException::BtcException( const std::string &msg ) : _msg(msg) {}
 
 BitcoinExchange::BtcException::~BtcException( void ) throw() {}
 
@@ -167,5 +167,5 @@ BitcoinExchange::BadInputColumnException::BadInputColumnException( const std::st
 
 BitcoinExchange::BadInputDateException::BadInputDateException( const std::string &err ) : BtcException(RED "Error" RESET ": Bad date input" MAGENTA " => " RESET "'" + err + "', " GREEN "Expected" RESET ": 'YYYY-MM-DD'") {}
 
-BitcoinExchange::BadInputException::BadInputException( const std::string &err) : BtcException(RED "Error" RESET ": " + err) {}
+BitcoinExchange::BadInputException::BadInputException( const std::string &err ) : BtcException(RED "Error" RESET ": " + err) {}
 
