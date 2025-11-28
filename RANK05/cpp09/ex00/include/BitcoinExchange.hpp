@@ -25,11 +25,11 @@ class BitcoinExchange {
 
 		// Method
 		void		readData( void );
-		std::string	trim( const std::string &str );
 		void		executeLine( const std::string &line );
-		bool		isValidDate( const std::string &date );
 		void		calculateValue( const std::string &date, const float &value ) const;
+		bool		isValidDate( const std::string &date );
 		bool		isValidValue( const std::string &line, const std::string &valueStr, float &value, std::string &err );
+		std::string	trim( const std::string &str );
 
 	public :
 		// Constructors
