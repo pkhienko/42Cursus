@@ -32,7 +32,7 @@ void	ShrubberyCreationForm::execute( Bureaucrat const &executor ) const
 		else
 		{
 			outfile <<
-			"		  ⠀⠀⠀⠈		  ⠀⠀⠀                  ⠈" << std::endl <<
+			"		  ⠀⠀⠀⠈		  ⠀⠀⠀                 ⠈" << std::endl <<
 			"⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⡰⡇⠁⠀⠀⠀⠀⠀⠀⠀              ⢀⠀⠀⡰⡇⠁" << std::endl <<
 			"⠀⠀⠀⠀⠀⠀⠀⠀⠰⢾⠇⠨⡦⠀⠂⠀⠀⠀⠀⠀⠀⠀           ⠀⠰⢾⠇⠨⡦⠀⠂" << std::endl <<
 			"⠀⠀⠀⠀⠀⠀⡀⠀⢈⣹⠜⠻⢾⠃⠀⠀⠀⠀⠀            ⠀⡀⠀⢈⣹⠜⠻⢾⠃" << std::endl <<
