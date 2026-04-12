@@ -59,6 +59,7 @@ static void test_4( void )
     std::cout << a << std::endl;
     std::cout << b << std::endl;
 
+    a.executeForm(*b); // should throw FormNotSigned
     a.signForm(*b); // should sign ok
     a.executeForm(*b); // should throw GradeTooLow
     std::cout << b << std::endl;
@@ -96,9 +97,9 @@ static void test_5( void )
 
     // execute with appropriate grades
     mid.executeForm(*shrub);   // OK (100 <= 137)
-    mid.executeForm(*robot);    // fail (100 > 45)
-    top.executeForm(*robot);    // OK (random success/fail message)
-    top.executeForm(*pres);  // OK
+    mid.executeForm(*robot);   // fail (100 > 45)
+    top.executeForm(*robot);   // OK (random success/fail message)
+    top.executeForm(*pres);    // OK
 
     delete shrub;
     delete robot;

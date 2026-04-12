@@ -18,10 +18,10 @@ std::string	ShrubberyCreationForm::getTarget( void ) const { return (this->_targ
 
 void	ShrubberyCreationForm::execute( Bureaucrat const &executor ) const
 {
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw AForm::GradeTooLowException();
-	else if (!this->getIsSigned())
+	if (!this->getIsSigned())
 		throw AForm::FormNotSignedException();
+	else if (executor.getGrade() > this->getExecuteGrade())
+		throw AForm::GradeTooLowException();
 	else
 	{
 		std::ofstream	outfile;
@@ -32,6 +32,21 @@ void	ShrubberyCreationForm::execute( Bureaucrat const &executor ) const
 		else
 		{
 			outfile <<
+			"		  ⠀⠀⠀⠈" << std::endl <<
+			"⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⡰⡇⠁" << std::endl <<
+			"⠀⠀⠀⠀⠀⠀⠀⠀⠰⢾⠇⠨⡦⠀⠂" << std::endl <<
+			"⠀⠀⠀⠀⠀⠀⡀⠀⢈⣹⠜⠻⢾⠃" << std::endl <<
+			"⠀⠀⠀⠀⠀⠀⠁⢠⣿⡵⠾⣻⣶⠿⠦" << std::endl <<
+			"⠀⠀⠀⠀⢀⠀⢀⣠⣮⣦⡶⠻⠛⢶⣄⡀⠁" << std::endl <<
+			"⠀⠀⠀⠀⠀⠀⢀⣽⠏⠁⣠⣂⣦⣈⣝⣦⣄⠀⠈⠁" << std::endl <<
+			"⠀⠀⠀⠀⠁⣠⣾⣵⣾⣾⠟⡙⠟⠿⣍⡉⠀⠀⠆" << std::endl <<
+			"⠀⠰⠀⠀⠄⣠⣶⣾⣭⡶⠟⠻⣶⡰⣜⣳⣦⣄⠀⡀" << std::endl <<
+			"⠀⠀⠀⢀⣠⣴⣿⣋⡴⣪⠎⣄⡙⠻⠿⣯⣉⠉" << std::endl <<
+			"⠀⠂⠀⢀⣉⡭⢿⡛⣛⣵⠎⠀⠙⢾⣶⣦⣭⣷⣦⠐" << std::endl <<
+			"⠀⠀⢈⣙⣿⡿⠿⠟⣋⢅⡄⡄⡐⣄⢤⣉⠷⢦⣄⣀⠠" << std::endl <<
+			"⠐⠾⠿⢽⣷⡶⠶⡿⣓⣭⣾⣿⢷⣬⣓⢿⠿⠿⣯⣉⣁" << std::endl <<
+			"⠀⠀⠀⠉⠉⠉⠛⠛⠉⢀⣿⢿⡀⠙⠋⠓⠿⠿⠏⠉⠉" << std::endl <<
+			"⠀⠀⠀⠀⠀⠀⠠⠤⠶⠾⢿⡯⠷⠶⠤⠄" << std::endl <<
 			"		  ⠀⠀⠀⠈" << std::endl <<
 			"⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⡰⡇⠁" << std::endl <<
 			"⠀⠀⠀⠀⠀⠀⠀⠀⠰⢾⠇⠨⡦⠀⠂" << std::endl <<

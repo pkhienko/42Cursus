@@ -32,6 +32,7 @@ $(NAME):		Makefile $(OBJECTS)
 clean:
 				@ echo "\033[1;33m--- Cleaning up object files ---"
 				@ $(RM) $(OBJECTS)
+				@ $(RM) *_shrubbery
 				@ echo "\033[32m--- Object files removed! ---"
 
 fclean:			clean

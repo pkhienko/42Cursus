@@ -18,10 +18,10 @@ std::string	PresidentialPardonForm::getTarget( void ) const { return (this->_tar
 
 void	PresidentialPardonForm::execute( Bureaucrat const &executor ) const
 {
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw AForm::GradeTooLowException();
-	else if (!this->getIsSigned())
+	if (!this->getIsSigned())
 		throw AForm::FormNotSignedException();
+	else if (executor.getGrade() > this->getExecuteGrade())
+		throw AForm::GradeTooLowException();
 	else
 		std::cout << YELLOW << this->getTarget() << RESET " has been " GREEN "pardoned" RESET " by Zaphod Beeblebrox." << std::endl;
 }
