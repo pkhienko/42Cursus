@@ -20,10 +20,10 @@ void	RobotomyRequestForm::execute( Bureaucrat const &executor ) const
 {
 	static int	counter = 0;
 
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw AForm::GradeTooLowException();
-	else if (!this->getIsSigned())
+	if (!this->getIsSigned())
 		throw AForm::FormNotSignedException();
+	else if (executor.getGrade() > this->getExecuteGrade())
+		throw AForm::GradeTooLowException();
 	else
 	{
 		std::srand(std::time(NULL) + ++counter);
