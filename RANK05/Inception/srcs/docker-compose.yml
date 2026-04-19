@@ -50,7 +50,7 @@ networks:
     name: Inception
     driver: brige
 
-secrets:s
+secrets:
   db_password: 
     file: ../secret/db_password.txt
   db_root_password:
