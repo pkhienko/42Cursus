@@ -1,25 +1,24 @@
-[mysqld]
-bind-address=0.0.0.0
-port=3306
-
+#
 # These groups are read by MariaDB server.
 # Use it for options that only the server (but not clients) should see
 
 # this is read by the standalone daemon and embedded servers
 [server]
 
-# this is only for the mariadbd daemon
-[mariadbd]
+# this is only for the mysqld standalone daemon
+[mysqld]
 
 #
 # * Basic Settings
 #
 
-#user                    = mysql
+user                    = mysql
 pid-file                = /run/mysqld/mysqld.pid
+socket                  = /run/mysqld/mysqld.sock
 basedir                 = /usr
-#datadir                 = /var/lib/mysql
-#tmpdir                  = /tmp
+datadir                 = /var/lib/mysql
+tmpdir                  = /tmp
+lc-messages-dir         = /usr/share/mysql
 
 # Broken reverse DNS slows down connections considerably and name resolve is
 # safe to skip if there are no "host by domain name" access grants
@@ -27,7 +26,8 @@ basedir                 = /usr
 
 # Instead of skip-networking the default is now to listen only on
 # localhost which is more compatible and is not less secure.
-#bind-address            = 127.0.0.1
+bind-address            = 0.0.0.0
+port                    = 3306
 
 #
 # * Fine Tuning
@@ -58,8 +58,9 @@ basedir                 = /usr
 #general_log_file       = /var/log/mysql/mysql.log
 #general_log            = 1
 
-# Error logging goes via stdout/stderr, which on systemd systems goes to
-# journald.
+# When running under systemd, error logging goes via stdout/stderr to journald
+# and when running legacy init error logging goes to syslog due to
+# /etc/mysql/conf.d/mariadb.conf.d/50-mysqld_safe.cnf
 # Enable this if you want to have error logging into a separate file
 #log_error = /var/log/mysql/error.log
 # Enable the slow query log to see queries with especially long duration
@@ -70,8 +71,8 @@ basedir                 = /usr
 #log_slow_min_examined_row_limit = 1000
 
 # The following can be used as easy to replay backup logs or for replication.
-# note: if you are setting up a replica, see README.Debian about other
-#       settings you may need to change.
+# note: if you are setting up a replication slave, see README.Debian about
+#       other settings you may need to change.
 #server-id              = 1
 #log_bin                = /var/log/mysql/mysql-bin.log
 expire_logs_days        = 10
@@ -92,8 +93,10 @@ expire_logs_days        = 10
 # * Character sets
 #
 
-# MariaDB default is now utf8 4-byte character set.
-# No Debian specific default is required.
+# MySQL/MariaDB default is Latin1, but in Debian we rather default to the full
+# utf8 4-byte character set. See also client.cnf
+character-set-server  = utf8mb4
+collation-server      = utf8mb4_general_ci
 
 #
 # * InnoDB
@@ -111,9 +114,9 @@ expire_logs_days        = 10
 # This group is only read by MariaDB servers, not by MySQL.
 # If you use the same .cnf file for MySQL and MariaDB,
 # you can put MariaDB-only options here
-[mariadbd]
+[mariadb]
 
-# This group is only read by MariaDB-12.2 servers.
+# This group is only read by MariaDB-10.11 servers.
 # If you use the same .cnf file for MariaDB of different versions,
 # use this group for options that older servers don't understand
-[mariadb-12.2]
+[mariadb-10.11]

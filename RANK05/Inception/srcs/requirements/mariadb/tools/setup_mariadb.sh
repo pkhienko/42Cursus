@@ -1,16 +1,18 @@
 #!/bin/bash
 
-set -e
+DB_PWD=$(cat /run/secrets/db_password)
+DB_ROOT_PWD=$(cat /run/secrets/db_root_password)
 
-DB_PWD=$(cat /run/secret/db_password.txt)
-DB_ROOT_PWD=$(cat /run/secret/db_root_password.txt)
+mkdir -p /run/mysqld
+chown -R mysql:mysql /run/mysqld /val/lib/mysql
 
 if [ ! -d "/var/lib/mysql/mysql" ]; then
     mariadb-install-db --user=mysql --datadir=/var/lib/mysql
 
-    mysqld_safe --datadir=/var/lib/mysql & pid="$!"
+    mariadbd &
+    pid="$!"
 
-    until mariadb-admin ping >/dev/null 2>&1; do
+    until mariadb-admin ping --silent; do
         sleep 1
     done
 
@@ -21,7 +23,7 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     mariadb -uroot -p"${DB_ROOT_PWD}" -e "FLUSH PRIVILEGES;"
 
     mariadb-admin -uroot -p"${DB_ROOT_PWD}" shutdown
-    wait "$pid" || true
+    wait "$pid"
 fi
 
-exec mysql --user=mysql
+exec mariadbd
