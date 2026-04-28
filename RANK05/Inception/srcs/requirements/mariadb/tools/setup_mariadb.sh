@@ -1,12 +1,13 @@
 #!/bin/bash
 
-DB_PWD=$(cat /run/secrets/db_password)
-DB_ROOT_PWD=$(cat /run/secrets/db_root_password)
+DB_PWD=$(cat /run/secrets/db_pwd)
+DB_ROOT_PWD=$(cat /run/secrets/db_root_pwd)
 
 mkdir -p /run/mysqld
 chown -R mysql:mysql /run/mysqld /var/lib/mysql
 
 if [ ! -d "/var/lib/mysql/mysql" ]; then
+    echo "Init MariaDB"
     mariadb-install-db --user=mysql --datadir=/var/lib/mysql
 
     mariadbd &
@@ -25,6 +26,9 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
 
     mariadb-admin -uroot -p"${DB_ROOT_PWD}" shutdown
     wait "$pid"
+    echo "Success init MariaDB"
+else
+    echo "MariaDB already initialized"
 fi
 
 exec mariadbd
