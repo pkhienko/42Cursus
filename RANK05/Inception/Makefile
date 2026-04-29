@@ -6,7 +6,7 @@ all:		up
 init:
 			@ mkdir -p /home/$(LOGIN)/data/mariadb
 			@ mkdir -p /home/$(LOGIN)/data/wordpress
-			@ bash srcs/requirements/tools/init_secrets.sh
+			@ bash srcs/requirements/tools/init_config.sh
 
 up:			init
 			@ $(COMPOSE) up -d --build
