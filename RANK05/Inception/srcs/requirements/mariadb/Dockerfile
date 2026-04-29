@@ -1,4 +1,5 @@
 FROM debian:bookworm
+
 RUN apt-get update && \
     apt-get install mariadb-server -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/mysql/*
@@ -9,4 +10,4 @@ COPY ./tools/setup_mariadb.sh /usr/local/bin/setup_mariadb.sh
 
 RUN chmod +x /usr/local/bin/setup_mariadb.sh
 
-CMD ["/usr/local/bin/setup_mariadb.sh"]
+ENTRYPOINT ["/usr/local/bin/setup_mariadb.sh"]

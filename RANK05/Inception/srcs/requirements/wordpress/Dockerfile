@@ -1,4 +1,5 @@
 FROM debian:bookworm
+
 RUN apt-get update && \
     apt-get install -y php-fpm php-mysql mariadb-client curl -y && \
     rm -rf /var/lib/apt/lists/*
@@ -14,4 +15,4 @@ RUN chmod +x /usr/local/bin/setup_wordpress.sh /usr/local/bin/wp
 
 WORKDIR /var/www/html
 
-CMD ["/usr/local/bin/setup_wordpress.sh"]
+ENTRYPOINT ["/usr/local/bin/setup_wordpress.sh"]

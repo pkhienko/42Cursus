@@ -47,7 +47,17 @@ services:
 
 volumes:
   wordpress_volume:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/pkhienko/data/wordpress
   database_volume:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/pkhienko/data/mariadb
 
 networks:
   inception_network:
