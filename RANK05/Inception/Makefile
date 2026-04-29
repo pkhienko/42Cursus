@@ -6,6 +6,7 @@ all:		up
 init:
 			@ mkdir -p /home/$(LOGIN)/data/mariadb
 			@ mkdir -p /home/$(LOGIN)/data/wordpress
+			@ bash srcs/requirements/tools/init_secrets.sh
 
 up:			init
 			@ $(COMPOSE) up -d --build
@@ -23,4 +24,4 @@ fclean:
 
 re:			fclean  up
 
-.PHONY: all up down clean fclean re
+.PHONY: all init up down clean fclean re

@@ -6,7 +6,7 @@ RUN apt-get update && \
 
 RUN mkdir -p /etc/nginx/ssl
 
-COPY ./conf/nginx.conf /etc/nginx/sites-available/default
+COPY ./conf/default /etc/nginx/sites-available/default
 COPY ./tools/setup_nginx.sh /usr/local/bin/setup_nginx.sh
 COPY ./tools/generate_ssl.sh /usr/local/bin/generate_ssl.sh
 
