@@ -12,15 +12,6 @@
 # define YELLOW "\033[1;33m"
 # define MAGENTA "\033[1;35m"
 
-enum e_type {
-	E_SPECIAL = 0,
-	E_CHAR = 1,
-	E_INT = 2,
-	E_FLOAT = 3,
-	E_DOUBLE = 4,
-	E_UNKNOWN = 5
-};
-
 class Serialization {
 	private :
 		// Constructors
