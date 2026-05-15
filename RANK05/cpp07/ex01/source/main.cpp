@@ -27,11 +27,11 @@ int main()
     std::cout << std::endl << std::endl;
 
 
-    std::cout << MAGENTA "--- Float Int Array ---" << std::endl;
-    const float constIntArray[] = {10.99, 20.01, 30.1234};
+    std::cout << MAGENTA "--- Float Array ---" << std::endl;
+    const float constFloatArray[] = {10.99, 20.01, 30.1234};
 
     std::cout << YELLOW "Array " RESET "(Float): ";
-    ::iter(constIntArray, 3, printElement<float>);
+    ::iter(constFloatArray, 3, printElement<float>);
     std::cout << std::endl << std::endl;
 
     std::cout << MAGENTA "--- String Array ---" << std::endl;
@@ -44,6 +44,11 @@ int main()
 	std::cout << YELLOW "After " RESET "(String): ";
     ::iter(strArray, 3, printString);
     std::cout << std::endl << std::endl;
+
+    std::cout << MAGENTA "--- Null Array ---" << std::endl;
+    int *nullArr = NULL;
+    
+    ::iter(nullArr, 10, printElement<int>);
 
     return (0);
 }

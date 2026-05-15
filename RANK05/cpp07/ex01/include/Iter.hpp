@@ -14,6 +14,8 @@
 template <typename T_Array, typename T_Function>
 void	iter( T_Array *arr, const size_t length, T_Function func )
 {
+	if (!arr)
+		return ;
 	for (size_t i = 0; i < length; i++)
 		func(arr[i]);
 }
