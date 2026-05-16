@@ -24,9 +24,9 @@ typename T::const_iterator	easyfind( const T &container, int n );
 
 class NotFoundException : public std::exception {
 	public :
-		virtual const char	*what( void ) const throw();
+		virtual const char	*what( void ) const throw() { return ("Element not found in container"); }
 };
 
-# include "../source/easyfind.tpp"
+# include "easyfind.tpp"
 
 #endif

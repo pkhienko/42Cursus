@@ -1,13 +1,10 @@
 #include "Span.hpp"
 
-Span::Span( void ) : _N(0) {}
+Span::Span( void ) : _N(0), _vector() {}
 
-Span::Span( unsigned int n ) : _N(n) {}
+Span::Span( unsigned int n ) : _N(n), _vector() { _vector.reserve(n); }
 
-Span::Span( const Span &other )
-{
-	*this = other;
-}
+Span::Span( const Span &other ) { *this = other; }
 
 Span	&Span::operator=( const Span &other )
 {
@@ -28,7 +25,7 @@ void	Span::addNumber( int n )
 	_vector.push_back(n);
 }
 
-long		Span::longestSpan( void )
+long		Span::longestSpan( void ) const
 {
 	if (_vector.size() <= 1)
 		throw Span::NoSpanFoundException();
@@ -38,7 +35,7 @@ long		Span::longestSpan( void )
 	return (max - min);
 }
 
-long		Span::shortestSpan( void )
+long		Span::shortestSpan( void ) const
 {
 	if (_vector.size() <= 1)
 		throw Span::NoSpanFoundException();
@@ -46,10 +43,10 @@ long		Span::shortestSpan( void )
 	t_vector	sort_vector(_vector);
 	long		min = MAX_LONG;
 
-	std::sort(_vector.begin(), _vector.end());
-	for (unsigned int i = 1; i < _N; i++)
+	std::sort(sort_vector.begin(), sort_vector.end());
+	for (std::size_t i = 1; i < sort_vector.size(); i++)
 	{
-		long	n = static_cast<unsigned int>(sort_vector[i]) - static_cast<unsigned int>(sort_vector[i - 1]);
+		long	n = static_cast<long>(sort_vector[i]) - static_cast<long>(sort_vector[i - 1]);
 		min = (n < min) ? n : min;
 	}
 	return (min);
@@ -57,9 +54,9 @@ long		Span::shortestSpan( void )
 
 void	Span::addNumber( t_vector_iter begin, t_vector_iter end )
 {
-	while (_vector.size() + std::distance(begin, end) > _N)
+	if (_vector.size() + std::distance(begin, end) > _N)
 		throw Span::ContainerIsFullException();
-	_vector.insert(_vector.begin(), begin, end);
+	_vector.insert(_vector.end(), begin, end);
 }
 
 const char	*Span::NoSpanFoundException::what( void ) const throw() { return ("No span can be found"); }

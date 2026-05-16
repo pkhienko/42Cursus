@@ -43,8 +43,8 @@ class Span  {
 
 		// Methods
 		void	addNumber( int n );
-		long	longestSpan( void );
-		long	shortestSpan( void );
+		long	longestSpan( void ) const;
+		long	shortestSpan( void ) const;
 		void	addNumber( t_vector_iter begin, t_vector_iter end );
 
 		// Exception

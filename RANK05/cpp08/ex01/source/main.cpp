@@ -78,5 +78,21 @@ int	main( void )
 		std::cerr << RED << e.what() << std::endl;
 	}
 
+	std::cout << std::endl << MAGENTA "--- Test 5: Negative Value ---" RESET << std::endl;
+	Span	sp6 = Span(3);
+	
+	try
+	{
+		sp6.addNumber(-10);
+		sp6.addNumber(-20);
+		sp6.addNumber(-30);
+		std::cout << YELLOW "Shortest Span" RESET ": " << sp6.shortestSpan() << std::endl;
+		std::cout << YELLOW "Longest Span" RESET ": " << sp6.longestSpan() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << RED << e.what() << std::endl;
+	}
+
 	return (0);
 }

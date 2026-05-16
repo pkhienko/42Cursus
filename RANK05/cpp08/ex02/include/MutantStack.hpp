@@ -50,6 +50,6 @@ class MutantStack : public std::stack<T, Container>
 		const_reverse_iterator	rend( void ) const;
 };
 
-# include "../source/MutantStack.tpp"
+# include "MutantStack.tpp"
 
 #endif
